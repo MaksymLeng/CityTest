@@ -72,7 +72,7 @@ export default function Page() {
             }
 
             const filterInput = selectedCategory
-                ? { categories: { contains: selectedCategory } }
+                ? { categories: [selectedCategory] }
                 : undefined;
 
             const data = await api.announcements.list(ITEMS_PER_PAGE, tokenToUse, filterInput);

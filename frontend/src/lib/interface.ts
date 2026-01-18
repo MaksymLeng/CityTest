@@ -22,22 +22,10 @@ export interface AnnouncementConnection {
     nextToken: string | null;
 }
 
-export interface ModelStringInput {
-    ne?: string;
-    eq?: string;
-    le?: string;
-    lt?: string;
-    ge?: string;
-    gt?: string;
-    contains?: string;
-    notContains?: string;
-    beginsWith?: string;
-    in?: string[];
-    between?: string[];
-}
+
 
 export interface AnnouncementFilterInput {
-    categories?: ModelStringInput;
+    categories?: string[];
     status?: AnnouncementStatus | null;
 }
 
