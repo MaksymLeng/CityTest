@@ -87,9 +87,3 @@ Aplikácia momentálne podporuje tieto kľúčové funkcie:
     Aplikácia bude dostupná na `http://localhost:5173`.
 
 ---
-
-## 📅 Plánované vylepšenia (ToDo)
-
-Na základe zadania plánujem v najbližšej aktualizácii (nedeľa) doplniť:
-* [ ] **Paginácia:** Rozdelenie výpisu inzerátov na stránky pre lepší výkon.
-* [ ] **Vyhľadávanie:** Filtrovanie inzerátov podľa názvu alebo obsahu.
