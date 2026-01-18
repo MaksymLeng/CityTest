@@ -132,7 +132,7 @@ export default function ChangePage() {
     }
 
     return (
-        <div className="container max-w-2xl mx-auto py-6">
+        <div className="container max-w-2xl mx-auto mb:py-6">
             <div className="mb-10">
                 <h1 className="text-3xl font-bold">Edit the announcement</h1>
             </div>
@@ -213,7 +213,7 @@ export default function ChangePage() {
                                             </Button>
                                         </FormControl>
                                     </PopoverTrigger>
-                                    <PopoverContent className="w-[400px] p-0">
+                                    <PopoverContent className="w-[200px] p-0">
                                         <Command>
                                             <CommandInput placeholder="Search category..." />
                                             <CommandList>

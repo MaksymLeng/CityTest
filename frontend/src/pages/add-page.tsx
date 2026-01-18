@@ -106,7 +106,7 @@ export default function AddPage() {
     }
 
     return (
-        <div className="container max-w-2xl mx-auto py-6">
+        <div className="container max-w-2xl mx-auto mb:py-6">
             <div className="mb-10">
                 <h1 className="text-3xl font-bold">Create new announcement</h1>
             </div>
@@ -187,7 +187,7 @@ export default function AddPage() {
                                             </Button>
                                         </FormControl>
                                     </PopoverTrigger>
-                                    <PopoverContent className="w-[400px] p-0">
+                                    <PopoverContent className="w-[200px] p-0">
                                         <Command>
                                             <CommandInput placeholder="Search category..." />
                                             <CommandList>

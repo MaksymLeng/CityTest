@@ -7,7 +7,7 @@ import ThemeButton from "@/components/theme-button.tsx";
 export default function Layout() {
     return (
         <div className="flex min-h-screen overflow-x-hidden bg-background text-foreground">
-            <aside className="lg:w-64 w-52 border-r bg-red-100/70 dark:bg-zinc-900/50 dark:border-zinc-800 flex flex-col transition-colors duration-300">
+            <aside className="lg:w-64 w-52 border-r bg-red-100/70 dark:bg-zinc-900/50 dark:border-zinc-800 flex flex-col transition-colors duration-300 hidden md:block">
                 <div className="p-6 flex items-center gap-3">
                     <div className="h-10 w-10 bg-gray-100 dark:bg-zinc-800 rounded-lg flex items-center justify-center shrink-0">
                         <img src={logo} alt="Logo" className="h-7 w-7" />
@@ -38,7 +38,7 @@ export default function Layout() {
                     <ThemeButton />
                 </header>
 
-                <div className="flex-1 p-8 overflow-y-auto">
+                <div className="flex-1 p-4 py-8 md:p-8 overflow-y-auto">
                     <Outlet />
                 </div>
             </main>
