@@ -1,0 +1,85 @@
+type Announcement {
+  id: ID!
+  title: String!
+  publicationDate: AWSDateTime!
+  lastUpdate: AWSDateTime!
+  categories: [String!]!
+  content: String
+  status: AnnouncementStatus!
+}
+
+type Category {
+  id: ID!
+  name: String!
+  slug: String!
+  description: String
+}
+
+enum AnnouncementStatus {
+  DRAFT
+  PUBLISHED
+}
+
+type AnnouncementConnection {
+  items: [Announcement!]!
+  nextToken: String
+}
+
+type Query {
+  listAnnouncements(
+    limit: Int = 20
+    nextToken: String
+    filter: AnnouncementFilterInput
+  ): AnnouncementConnection!
+
+  getAnnouncement(id: ID!): Announcement
+
+  listCategories: [Category!]!
+}
+
+input AnnouncementFilterInput {
+  categories: [String!]
+  status: AnnouncementStatus
+}
+
+type Mutation {
+  createAnnouncement(input: CreateAnnouncementInput!): Announcement!
+
+  updateAnnouncement(input: UpdateAnnouncementInput!): Announcement!
+
+  deleteAnnouncement(id: ID!): Announcement
+
+  createCategory(input: CreateCategoryInput!): Category!
+}
+
+input CreateAnnouncementInput {
+  title: String!
+  content: String
+  categories: [String!]!
+  status: AnnouncementStatus = PUBLISHED
+}
+
+input UpdateAnnouncementInput {
+  id: ID!
+  title: String
+  content: String
+  categories: [String!]
+  status: AnnouncementStatus
+}
+
+input CreateCategoryInput {
+  name: String!
+  slug: String!
+  description: String
+}
+
+type Subscription {
+  onCreateAnnouncement: Announcement
+    @aws_subscribe(mutations: ["createAnnouncement"])
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+  subscription: Subscription
+}
